@@ -13,8 +13,13 @@ def print_string(text):
 
 @app.route('/count/<int:num>')
 def count(num):
-    numbers = '\n'.join(str(i) for i in range(num))  
-    return numbers 
+    
+    numbers = [str(i) for i in range(num)]
+
+    
+    numbers_html = "<br>".join(numbers)
+
+    return numbers_html 
 
 @app.route('/math/<int:num1>/<operation>/<int:num2>')
 def math(num1, operation, num2):
